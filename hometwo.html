@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            overflow-y: hidden; /* Disable vertical scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling behavior */
+            white-space: nowrap; /* Prevent line breaks */
+        }
+
+        .phase-box {
+            height: 100%;
+            width: 30%;
+            background-color: #ff0000ce;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .additional-box {
+            height: 105%;
+            width: 30%;
+            z-index: 1;
+            position: absolute;
+            overflow: hidden;
+            border-radius: 5px;
+            white-space: normal; /* Reset white-space for button text */
+        }
+
+        .additional-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .additional-box:nth-child(1) {
+            left: 30%;
+        }
+
+        .additional-box:nth-child(2) {
+            left: 45%;
+        }
+
+        .additional-box:nth-child(3) {
+            left: 60%;
+        }
+
+        .additional-box:nth-child(4) {
+            left: 75%;
+        }
+
+        .additional-box:nth-child(5) {
+            left: 90%;
+        }
+
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .text {
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900px;
+            font-style: normal;
+        }
+
+        .additional-box button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            font-family: "Josefin Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900px;
+            font-style: normal;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+            width: 200px;
+        }
+
+        .additional-box button:hover {
+            box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px red, 0 0 70px red, 0 0 80px red, 0 0 100px
+                red, 0 0 150px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1 style="margin-top: 40px;">EXPLORE OUR COURSES</h1>
+        <div class="phase-box">
+            <!-- Your phase-box content -->
+        </div>
+        <!-- Five additional boxes -->
+        <div class="additional-box"
+            style="left: 30%; background-image: url('https://i.pinimg.com/originals/b3/79/27/b37927985b2ad0606b5096e744a0741f.jpg');">
+            <button>Phase 1</button>
+        </div>
+        <div class="additional-box"
+            style="left: 60%; background-image: url('https://cdn.wallpapersafari.com/5/37/lcgyzY.jpg');">
+            <button>Phase 2</button>
+        </div>
+        <div class="additional-box"
+            style="left: 90%; background-image: url('https://w0.peakpx.com/wallpaper/975/501/HD-wallpaper-galaxy-pink-purple-thumbnail.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <button>Phase 3</button>
+        </div>
+        <div class="additional-box"
+            style="left: 119%; background-image: url('https://wallpapercave.com/wp/wp2554597.jpg');">
+            <button>Phase 4</button>
+        </div>
+        <div class="additional-box"
+            style="left: 149%; background-image: url('https://cdn.wallpapersafari.com/71/19/f3pDtr.jpg');">
+            <button>Phase 5</button>
+        </div>
+        <!-- Your video element -->
+        <video id="background-video" autoplay loop muted>
+            <source src="./Vmake-1710150714315 (online-video-cutter.com).mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <script>
+        // Get the additional boxes container element
+        const additionalBoxes = document.querySelector('.main');
+
+        // Add event listener for mousewheel scrolling
+        additionalBoxes.addEventListener('wheel', function(event) {
+            // Prevent the default scroll behavior
+            event.preventDefault();
+
+            // Calculate the amount to scroll
+            const scrollAmount = event.deltaY;
+
+            // Scroll the additional boxes container horizontally
+            additionalBoxes.scrollLeft += scrollAmount;
+        });
+    </script>
+</body>
+
+</html>

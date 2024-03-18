@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>enjoyprogramming.com</title>
+    <link rel="icon" type="image/x-icon" href="../ayushprojects-main/images & audio/EP LOGO.jpeg">
+</head>
+<style>
+    /* CSS Reset */
+
+
+
+    html {
+        scroll-behavior: smooth;
+        background-color: rgb(0, 0, 0);
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Baloo Bhai', cursive;
+
+    }
+
+    #navbar ul li {
+        list-style: none;
+        font-size: 30px;
+        margin: 20px;
+        text-align: left;
+    }
+
+    #navbar ul li a {
+        background-color: rgba(88, 96, 135, 0.7);
+        color: rgb(253, 253, 253);
+        display: block;
+        padding: 3px 22px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: larger;
+
+    }
+
+    #navbar ul li a:hover {
+        border-style: solid;
+        color: black;
+        background-color: rgb(221, 109, 109);
+    }
+
+    /* Home Section */
+    #home {
+        display: flex;
+        flex-direction: column;
+        padding: 3px 200px;
+        height: 650px;
+        justify-content: center;
+        align-items: end;
+        margin-left: 700px;
+
+    }
+
+    /* background image */
+    #background-video {
+        width: 100vw;
+        height: 65vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+
+    #home h1 {
+        color: rgb(222, 233, 19);
+        font-size: 40px;
+        font-family: 'Bree Serif', serif;
+        margin-bottom: 20px;
+    }
+
+    #home blockquote {
+        color: white;
+        font-size: 20px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    /* Services Section */
+    #services {
+        margin: 34px;
+        margin-left: 0%;
+        display: flex;
+    }
+
+    #services .box {
+        border: 2px solid rgb(195, 255, 0);
+        padding: 34px;
+        margin: 2px 55px;
+        border-radius: 28px;
+        background: #e6ef45;
+        margin-bottom: 20px;
+
+    }
+
+    #services .box img {
+        height: 160px;
+        width: 100px;
+        margin: auto;
+        display: block;
+
+    }
+
+    #services .box p {
+        font-family: 'Bree Serif', serif;
+    }
+
+    /* Utility Classes */
+    .h-primary {
+        font-family: 'Bree Serif', serif;
+        font-size: 3.8rem;
+        color: #d7db04;
+
+    }
+
+    .btn {
+        padding: 6px 20px;
+        border: 2px solid white;
+        background-color: rgb(57, 104, 192);
+        color: white;
+        margin: 17px;
+        margin-left: 80px;
+        font-size: 1.5rem;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: rgb(75, 42, 196);
+    }
+
+    .center {
+        text-align: center;
+        color: rgb(242, 255, 0);
+        margin-top: 200px;
+        background-color: black;
+        width: 100%;
+        background-attachment: fixed;
+    }
+
+
+
+    .button {
+        margin: 0;
+        cursor: cell;
+        font-family: "px-grotesk-regular";
+        font-size: 20px;
+        text-transform: uppercase;
+        background-color: rgba(211, 33, 33, 0.7);
+        color: #ffffff;
+        -webkit-transition: .6s all cubic-bezier(1, 0, 0, 1);
+        padding: 25px 32px;
+        width: 200px;
+        height: 100%;
+        bottom: 10px;
+        right: -10px;
+        z-index: 100;
+        position: absolute;
+        top: 10px;
+
+    }
+
+    .button ul {
+        margin-right: 300px;
+    }
+
+    .button:hover {
+        color: white;
+        width: 50%;
+        background-image: url(https://media.licdn.com/dms/image/D4D22AQEapx8mct7tXQ/feedshare-shrink_800/0/1707766985751?e=2147483647&v=beta&t=x8vp6blfCl0f3dTMmymo6Ojmwtk2bsoyAYcGuBmw0cs);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right;
+    }
+
+    .quote {
+        color: rgb(229, 255, 0);
+        background-color: grey;
+    }
+
+    .quote:hover {
+        background-color: grey;
+    }
+
+    .share {
+        width: 5rem;
+        height: 5rem;
+        float: left;
+        margin: .5rem 1rem .5rem 0;
+        color: #353c4a;
+        border: .125rem solid #5b5b5b;
+        box-shadow: 0 0 8px 0 rgba(248, 24, 158, 0.15);
+        border-radius: 50%;
+        transition: 250ms;
+
+        &:last-child {
+            margin-right: 0
+        }
+
+        &:hover,
+        &:focus {
+            background: #1bcb1e;
+            color: white;
+        }
+
+        &:focus {
+            outline-color: inherit;
+            box-shadow: 0 0 8px 0 rgba(248, 24, 158, 0.15);
+        }
+    }
+
+    h2 {
+        color: #f3f3f3;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        vertical-align: baseline;
+        align-self: flex-end;
+        margin-top: 25px;
+        max-width: 100%;
+        position: relative;
+        font-family: "px-grotesk-regular";
+        font-size: 22px;
+        line-height: 26px;
+        opacity: 0.8;
+        text-align: left;
+        font-weight: bold;
+        margin-left: 10px;
+
+    }
+
+    /* ======= This section is for h3 ======= */
+    h3 {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+        font-family: "px-grotesk-bold";
+        background: -webkit-linear-gradient(0deg, #fff, #f2ff00);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(215, 84, 84, 0);
+        font-size: calc(.3rem + 3.2777777778vw);
+        text-align: left;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <img src="https://pps.whatsapp.net/v/t61.24694-24/382351423_717624343740318_5898497769002591780_n.jpg?ccb=11-4&oh=01_AdR7vgKeePuhQaRNXauu9lzuGwAzq3CiAzykbN_CL0ZmWg&oe=65F830CB&_nc_sid=e6ed6c&_nc_cat=101"
+        style="height: 100px; width: 110px; border-radius: 50%; float: left; margin-left: 10px; margin-top: 20px;"
+        alt="">
+    <h1 class=" gradient-type head"
+        style="opacity: 0.8; background-position: 13.2558% 41.9528%; float:left; margin-top: 20px; color: #fbff00;">
+        &emsp;ENJOY PROGRAMMING</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    <h3 class="gradient-type" style="margin-right: 40px; margin-top: 50px;">Welcome To The
+        World Of Information Technology
+    </h3>
+    <h2 class="sub-title align-self-bottom" style="opacity:0.8;">A genuine IT training institute with proffectional
+        Industrial Trainers A genuine IT training institute with proffectional</h2>
+    <section id="home" style="padding-left:100px;">
+
+            <div class="button">
+                <h2 class="quote"><I>"The more you learn,<br>The more you earn."</I></h2>
+
+                <nav id="navbar"> 
+                    <ul>
+                        <li class="item"><a href="./enjoyhome.html">Home</a></li>
+                        <li class="item"><a href="#services-container">Courses</a></li>
+                        <li class="item"><a
+                                href="https://www.google.com/search?q=enjoy+programming+katol&sca_esv=f78c97b05244d2b1&ei=AqDsZZTMH_KRvr0PmIm1kAc&ved=0ahUKEwiU1bnk3eeEAxXyiK8BHZhEDXIQ4dUDCBA&uact=5&oq=enjoy+programming+katol&gs_lp=Egxnd3Mtd2l6LXNlcnAiF2Vuam95IHByb2dyYW1taW5nIGthdG9sMggQABiABBiwAzIOEAAYgAQYigUYhgMYsAMyDhAAGIAEGIoFGIYDGLADMg4QABiABBiKBRiGAxiwAzIOEAAYgAQYigUYhgMYsANI9wxQAFgAcAJ4AJABAJgBAKABAKoBALgBA8gBAJgCAqACCZgDAIgGAZAGBZIHATKgBwA&sclient=gws-wiz-serp">About
+                                Us</a></li>
+                        <li class="item"><a href="727575767 ">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+    </section>
+    <video id="background-video" autoplay loop muted poster="./Skype_Video.mp4">
+        <source src="/Users/enjoy_26_ep/Documents/ayushprojects-main/images & audio/Skype_Video.mp4" type="video/mp4">
+    </video>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="services-container">
+        <h1 class="h-primary center"> LEVELS</h1>
+        <div id="services">
+            <div class="box">
+                <h2 style="color: #ff0000;">PHASE</h2>
+                <a href="google.com"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                        class="share" viewBox="0 0 16 16">
+                        <path
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M9.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383z" />
+                    </svg></a>
+            </div>
+            <div class="box">
+                <h2 style="color: #ff0000;">PHASE</h2>
+                <a href="google.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="share"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306" />
+                    </svg></a>
+            </div>
+            <div class="box">
+                <h2 style="color: #ff0000;">PHASE</h2>
+                <a href="google.com"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                        class="share" viewBox="0 0 16 16">
+                        <path
+                            d="M7.918 8.414h-.879V7.342h.838c.78 0 1.348-.522 1.342-1.237 0-.709-.563-1.195-1.348-1.195-.79 0-1.312.498-1.348 1.055H5.275c.036-1.137.95-2.115 2.625-2.121 1.594-.012 2.608.885 2.637 2.062.023 1.137-.885 1.776-1.482 1.875v.07c.703.07 1.71.64 1.734 1.917.024 1.459-1.277 2.396-2.93 2.396-1.705 0-2.707-.967-2.754-2.144H6.33c.059.597.68 1.06 1.541 1.066.973.006 1.6-.563 1.588-1.354-.006-.779-.621-1.318-1.541-1.318" />
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
+                    </svg></a>
+
+            </div>
+            <div class="box">
+                <h2 style="color: #ff0000;">PHASE</h2>
+                <a href="google.com"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                        class="share" viewBox="0 0 16 16">
+                        <path
+                            d="M7.519 5.057q.33-.527.657-1.055h1.933v5.332h1.008v1.107H10.11V12H8.85v-1.559H4.978V9.322c.77-1.427 1.656-2.847 2.542-4.265ZM6.225 9.281v.053H8.85V5.063h-.065c-.867 1.33-1.787 2.806-2.56 4.218" />
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8" />
+                    </svg></a>
+            </div>
+            <div class="box">
+                <h2 style="color: #ff0000;">PHASE</h2>
+                <a href="google.com"> <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
+                        class="share" viewBox="0 0 16 16">
+                        <path
+                            d="M1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8m15 0A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-8.006 4.158c-1.57 0-2.654-.902-2.719-2.115h1.237c.14.72.832 1.031 1.529 1.031.791 0 1.57-.597 1.57-1.681 0-.967-.732-1.57-1.582-1.57-.767 0-1.242.45-1.435.808H5.445L5.791 4h4.705v1.103H6.875l-.193 2.343h.064c.17-.258.715-.68 1.611-.68 1.383 0 2.561.944 2.561 2.585 0 1.687-1.184 2.806-2.924 2.806Z" />
+                    </svg></a>
+            </div>
+
+    </section>
+    </div>
+
+
+</body>
+
+</html>
