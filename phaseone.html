@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <link rel="stylesheet" href="phaseone.css">
+   <style>
+      /* CSS rules to style the video container */
+      #video-background {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         z-index: -1;
+      }
+
+      /* CSS rules to reduce the size of images and center them */
+      .swiper-slide img {
+         max-width: 100%;
+         /* Set maximum width to 100% of the container */
+         max-height: 550px;
+         /* Set maximum height to 525px */
+         height: auto;
+         /* Maintain aspect ratio */
+         display: block;
+         /* Ensure images are displayed as block elements */
+         margin: 0 auto;
+         /* Center images horizontally */
+         text-align: center;
+         /* Align images within their containers */
+      }
+
+      /* Disable scrolling */
+      body {
+         overflow: hidden;
+      }
+   </style>
+</head>
+
+<body>
+   <img
+      src="https://scontent.cdninstagram.com/v/t51.2885-19/429928913_952198856511201_7671726885144338379_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent.cdninstagram.com&_nc_cat=109&_nc_ohc=ozxXikRSyN8AX880JTv&edm=APs17CUBAAAA&ccb=7-5&oh=00_AfDz7OBaSQ0sEz_dpDCcCtb3EIzgt05NoevbK98GS7OqqA&oe=65FE51CF&_nc_sid=10d13b"
+      style="height: 100px; width: 110px; border-radius: 50%; float: left;" alt="" />
+   <!-- Video background container -->
+   <video autoplay muted loop id="video-background">
+      <source src="Skype_Video.mp4" type="video/mp4">
+   </video>
+
+   <div class="gallery" unique-script-id="w-w-dm-id">
+      <div class="responsive-container-block bg">
+         <div class="responsive-container-block">
+            <p class="text-blk title">
+               Ｐｈａｓｅ_０１
+            </p>
+            <p class="text-blk heading">
+               Skills Gained After Completation Of Phase_01
+            </p>
+         </div>
+         <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <img class="im" src="https://miro.medium.com/v2/resize:fit:1200/1*2xsLeLNqKwIoGOQlw8O6Ug.png">
+               </div>
+               <div class="swiper-slide">
+                  <img class="im"
+                     src="https://www.appstory.org/wp-content/uploads/2021/05/Fundamentals-of-Software-Development.jpeg">
+               </div>
+               <div class="swiper-slide">
+                  <img class="im image-block"
+                     src="https://d1ng1bucl7w66k.cloudfront.net/ghost-blog/2021/01/Mobile-App-Programming-for-Kids.png">
+               </div>
+               <div class="swiper-slide">
+                  <img class="im" src="https://media.licdn.com/dms/image/D4D12AQHJRJAcMl0lQg/article-cover_image-shrink_600_2000/0/1684503499962?e=2147483647&v=beta&t=vRaRGQ4cagC-rindjhJRPCiBvFqClHq4vSeg2KjNvPc">
+               </div>
+               <div class="swiper-slide">
+                  <img class="im" src="https://pmstudycircle.com/wp-content/uploads/2023/09/software-project-management.png.webp">
+               </div>
+
+            </div>
+            <div class="swiper-pagination container-block"></div>
+         </div>
+      </div>
+   </div>
+
+   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+   <script>
+      var swiper = new Swiper(".mySwiper", {
+         loop: true, // Enable loop mode
+         slidesPerView: 1, // Number of slides per view
+         spaceBetween: 30, // Space between slides
+         pagination: {
+            el: ".swiper-pagination", // Pagination element
+            clickable: true, // Enable clickable pagination bullets
+         },
+         autoplay: {
+            delay: 5000, // Autoplay delay in milliseconds
+            disableOnInteraction: false, // Disable autoplay on user interaction
+         },
+         effect: "fade", // Transition effect between slides
+         fadeEffect: {
+            crossFade: true // Enable cross fade effect
+         }
+      });
+   </script>
+</body>
+
+</html>
