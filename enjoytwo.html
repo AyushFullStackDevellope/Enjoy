@@ -10,40 +10,57 @@
             margin: 0;
             font-family: 'Roboto', sans-serif;
             background-color: #f8f8f8;
+            overflow-x: auto;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                overflow-y: hidden;
+            }
         }
 
         .main {
             position: relative;
             height: 100vh;
             width: 150%;
-            /* Adjusted width for horizontal scrolling */
             z-index: 1;
-            overflow-x: auto;
-            /* Change overflow-x to auto for horizontal scrolling */
-            overflow-y: hidden;
             white-space: nowrap;
             display: flex;
             align-items: center;
-        }
+            flex-wrap: wrap;
 
-        .phase-box {
-            height: 100%;
-
-            background-color: #ff0000ce;
-            z-index: 1;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
 
         .additional-box {
-            height: 80%;
-            width: 15%;
+            height: 80vh;
+            width: 18%;
             position: relative;
             overflow: hidden;
             border-radius: 10px;
-            margin: 0 10px;
-            box-shadow: 0 2px 6px rgba(252, 22, 22, 0.626);
+            margin: 0 auto 20px;
+            box-shadow: 0 2px 6px rgba(255, 30, 30, 0.626);
+            background-color: #ffffff;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            margin-top: 150px;
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            /* Ensure positioning context */
+            z-index: 2;
+            /* Set a higher z-index to bring text in front of images */
+            gap: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .additional-box::before {
@@ -53,35 +70,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(223, 27, 27, 0.3);
+            background-color: rgba(124, 37, 17, 0.3);
             z-index: 1;
             transition: opacity 0.3s ease;
             opacity: 0;
-            /* Initial opacity set to 0 */
         }
 
         .additional-box:hover::before {
             opacity: 1;
-            /* Change opacity on hover */
         }
 
         .additional-box button {
             position: absolute;
-            bottom: 20px;
+            width: 50vw;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
-            background-color: #ff3b30;
+            background-color: #000542;
             color: white;
             font-weight: 700;
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
             z-index: 2;
+
         }
-
-
 
         h1 {
             position: absolute;
@@ -91,36 +106,188 @@
             color: #ffffff;
             z-index: 2;
         }
+
+        @media only screen and (max-width: 767px) {
+            .additional-box {
+                width: 50%;
+                margin-left: 10%;
+                height: 50%;
+            }
+        }
+
+        header {
+            background-color: #c4e5fa;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 150%;
+            height: 15%;
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            width: 110px;
+            height: auto;
+            margin-top: 1.5px;
+            margin-right: 89%;
+        }
+
+        .enjoy {
+            margin-right: 50px;
+            color: #fff;
+
+        }
+
+        #PhaseOne {
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        p {
+            margin-top: 45px;
+        }
+
+        .additional-box .android-logo {
+            display: inline-block;
+            margin-right: 15px;
+            /* Adjust margin as needed */
+        }
+
+        .additional-box p img {
+            margin-right: 10px;
+            /* Add margin to the right of the images */
+        }
+
+        .additional-box p {
+            display: flex;
+            /* Use flexbox layout */
+            align-items: center;
+            /* Vertically align items */
+        }
+
+        .additional-box p img {
+            margin-right: 10px;
+            /* Add margin to the right of the images */
+            height: 20px;
+            /* Adjust height as needed */
+            width: auto;
+            /* Ensure proportional scaling */
+        }
+
+        .additional-box p img {
+            margin-right: 10px;
+            /* Add margin to the right of the images */
+            height: 30px;
+            /* Adjust height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
     </style>
 </head>
 
 <body>
+    <header>
+        <img style="border-radius: 50%; margin-left: 15px;" src="./assets/logo.jpeg" alt="EP Logo">
+        <div class="enjoy">Enjoy Programming</div>
+    </header>
     <div class="main">
-        <h1>EXPLORE OUR COURSES</h1>
-
-        <!-- Five additional boxes -->
+        <!-- five additional boxes -->
         <div class="additional-box">
-            <button>Phase 1</button>
+            <button>P ｈａｓｅ_０１</button>
+            <div style="padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <p>📈 Fundamentals</p>
+                <p><img src="./images/c.png" height="2./0px" width="auto">C Language </p>
+                <p><img src="./images/html.png" height="20px" width="auto">HTML</p>
+                <p><img src="./images/css.png" height="20px" width="auto">CSS</p>
+                <p><img src="./images/js.png" height="20px" width="auto">JavaScript(Beginner)</p>
+                <p><img src="https://brandslogos.com/wp-content/uploads/images/large/java-logo-1.png" height="30px"
+                        width="auto">Java(Beginner)</p>
+                <p class="android-logo"><img
+                        src="https://www.freepnglogos.com/uploads/android-logo-png/android-logo-0.png" height="30px"
+                        width="auto">Android Development(Beginner)</p>
+                <p><img src="./images/teasting.png" height="30px" width="auto"> Manual Testing(Beginner)</p>
+            </div>
         </div>
         <div class="additional-box">
-            <button>Phase 2</button>
+            <button>P ｈａｓｅ_０２</button>
+            <div style="padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <p><img src="./images/soft.png" height="30px" width="auto">Software Designing</p>
+                <p><img src="./images/detabase.png" height="20px" width="auto">Database(Beginner)</p>
+                <p><img src="https://brandslogos.com/wp-content/uploads/images/large/java-logo-1.png" height="20px"
+                        width="auto">Java(Professional)</p>
+                <p><img src="https://www.freepnglogos.com/uploads/android-logo-png/android-logo-0.png" height="30px"
+                        width="auto" class="android-logo">Android Development(Intermediate)</p>
+                <p><img src="./images/js.png" height="20px" width="auto">`JavaScript(Professional)</p>
+                <p><img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/23-swift-512.png"
+                        height="20px" width="auto">Swift(Beginner)</p>
+                <p><img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-glyph/2048/5315_-_Apple-512.png"
+                        height="30px" width="auto">IOS Development(Beginner)</p>
+                <p><img src="./images/teasting.png" height="30px" width="auto"> Manual Testing(Profectional)</p>
+            </div>
         </div>
-
         <div class="additional-box">
-            <button>Phase 3</button>
+            <button>P ｈａｓｅ_０３</button>
+            <div style="padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <p><img src="./images/scm.png" height="30px" width="auto">SCM</p>
+                <p><img src="./images/detabase.png" height="20px" width="auto">Database(Intermediate)</p>
+                <p><img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/23-swift-512.png"
+                        height="20px" width="auto">Swift(Professional)</p>
+                <p><img src="https://cdn1.iconfinder.com/data/icons/soleicons-fill-vol-1/64/reactjs_javascript_library_atom_atomic_react-512.png"
+                        height="30px" width="auto">React JS(Beginner)</p>
+                <p><img src="https://www.freepnglogos.com/uploads/android-logo-png/android-logo-0.png" height="30px"
+                        width="auto" class="android-logo">Android Development(Professional)</p>
+                <p><img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" height="20px"
+                        width="auto">Node JS(Beginner)</p>
+                <p><img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-glyph/2048/5315_-_Apple-512.png"
+                        height="0px" width="auto">IOS Development(Professional)</p>
+                <p><img src="./images/autoo.png" height="30px" width="auto">Automation(Beginner)</p>
+            </div>
         </div>
-
         <div class="additional-box">
-            <button>Phase 4</button>
+            <button>P ｈａｓｅ_０４</button>
+            <div style="padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <p><img src="./images/pmt.png" height="30px" width="auto">PMT</p>
+                <p><img src="./images/detabase.png" height="20px" width="auto">Database(Advance)</p>
+                <p><img src="./images/app.png" height="20px" width="auto">Apps Designing</p>
+                <p><img src="./images/inter.png" height="30px" width="auto">Interview Preparation</p>
+                <p><img src="https://www.freepnglogos.com/uploads/android-logo-png/android-logo-0.png" height="30px"
+                        width="auto">React JS(Intermediate)</p>
+                <p><img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" height="20px"
+                        width="auto">React Native(Beginner)</p>
+                <p><img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-glyph/2048/5315_-_Apple-512.png"
+                        height="30px" width="auto">Node JS(Intermediate)</p>
+                <p><img src="./images/autoo.png" height="30px" width="auto">Automation(Intermediate)</p>
+            </div>
         </div>
-
         <div class="additional-box">
-            <button>Phase 5</button>
+            <button>P ｈａｓｅ_０５</button>
+            <div style="padding: 15px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <p><img src="./images/pmt.png" height="30px" width="auto">Deployment</p>
+                <p><img src="./images/detabase.png" height="20px" width="auto">Database(Professional)</p>
+                <p><img src="./images/app.png" height="20px" width="auto">Python</p>
+                <p><img src="./images/inter.png" height="30px" width="auto">Interview Preparation</p>
+                <p><img src="https://www.freepnglogos.com/uploads/android-logo-png/android-logo-0.png" height="30px"
+                        width="auto">React JS(Professional)</p>
+                <p><img src="https://static-00.iconduck.com/assets.00/node-js-icon-454x512-nztofx17.png" height="20px"
+                        width="auto">React Native(Professional)</p>
+                <p><img src="https://cdn3.iconfinder.com/data/icons/social-media-logos-glyph/2048/5315_-_Apple-512.png"
+                        height="30px" width="auto">Node JS(Professional)</p>
+                <p><img src="./images/autoo.png" height="30px" width="auto">Automation(Professional)</p>
+            </div>
         </div>
-        <!-- Your video element -->
     </div>
 
-
+    <script>
+        // Disable vertical scrolling on computers
+        window.addEventListener('wheel', function (e) {
+            if (e.deltaY !== 0) {
+                e.preventDefault(); // Prevent vertical scrolling
+                window.scrollBy(e.deltaY * 2, 0); // Scroll horizontally
+            }
+        });
+    </script>
 </body>
 
 </html>
